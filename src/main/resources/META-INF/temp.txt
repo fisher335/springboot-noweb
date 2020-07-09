@@ -1,0 +1,5 @@
+1：企业网盘全文检索功能改进
+2：商密网文件存储服务部署和适配
+
+
+http://disk.bjsasc.com:10024/ASP/drap-cloud-common.git
