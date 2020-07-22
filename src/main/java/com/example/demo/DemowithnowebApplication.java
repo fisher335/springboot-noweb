@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemowithnowebApplication implements CommandLineRunner {
 
     @Autowired
+    @Qualifier(value = "Cat")
     public BaseAnimal as;
 
     @Autowired()
@@ -28,8 +29,6 @@ public class DemowithnowebApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-    ps.say();
-    as.run();
-
+        ps.say();
     }
 }
