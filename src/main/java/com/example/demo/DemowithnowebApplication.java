@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemowithnowebApplication implements CommandLineRunner {
 
     @Autowired
-    @Qualifier(value = "cat")
     public BaseAnimal as;
 
     @Autowired()
