@@ -1,24 +1,20 @@
 package com.example.demo;
 
-import com.example.demo.service.BaseAnimal;
-import com.example.demo.service.People;
+import com.example.demo.Dao.User;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class DemowithnowebApplication implements CommandLineRunner {
 
     @Autowired
-    public BaseAnimal as;
-
-    @Autowired()
-    @Qualifier(value = "wj")
-    public People ps;
-
+    private UserService us;
 
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(DemowithnowebApplication.class);
@@ -28,6 +24,7 @@ public class DemowithnowebApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        ps.say();
+        List<User> li = us.getAllUsers();
+        li.forEach(user -> System.out.println(user.toString()));
     }
 }
