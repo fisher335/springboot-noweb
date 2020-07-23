@@ -8,7 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootApplication
 public class DemowithnowebApplication implements CommandLineRunner {
@@ -24,7 +25,14 @@ public class DemowithnowebApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        List<User> li = us.getAllUsers();
-        li.forEach(user -> System.out.println(user.toString()));
+//        List<Map<String,Object>> li = us.getUserMap();
+//        li.forEach(user -> System.out.println(user.toString()));
+        User a = new User("ztz","ztz",11);
+
+        Map<String,Object> b = new HashMap<>();
+        b.put("name","天天向上");
+        b.put("login_name","fsm");
+        b.put("age",11);
+        us.insertMap(b);
     }
 }
